@@ -4,9 +4,9 @@ import {startClock, serverRenderClock} from '../store'
 import Examples from '../components/examples'
 
 class Index extends React.Component {
-  static getInitialProps ({ reduxStore, req }) {
+  static getInitialProps ({ store, req }) {
     const isServer = !!req
-    reduxStore.dispatch(serverRenderClock(isServer))
+    store.dispatch(serverRenderClock(isServer))
 
     return {}
   }

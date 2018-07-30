@@ -11,9 +11,9 @@ function Examples ({ lastUpdate, light }) {
   )
 }
 
-function mapStateToProps (state) {
-  const { lastUpdate, light } = state
-  return { lastUpdate, light }
-}
+const mapStateToProps = state => ({
+  lastUpdate: state.get('lastUpdate'),
+  light: state.get('light')
+})
 
 export default connect(mapStateToProps)(Examples)
